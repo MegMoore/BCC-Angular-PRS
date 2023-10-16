@@ -12,7 +12,10 @@ import { MenuComponent } from './menu/menu/menu.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { SortPipe } from './core/sort.pipe';
 import { SearchUserPipe } from './user/search-user.pipe';
-import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { BoolPipe } from './core/bool.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     UserListComponent,
     SortPipe,
     SearchUserPipe,
-    UserDetailComponent
+    UserDetailComponent,
+    UserCreateComponent,
+    UserEditComponent,
+    BoolPipe
   ],
   imports: [
     BrowserModule,

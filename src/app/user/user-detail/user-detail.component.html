@@ -1,0 +1,44 @@
+<h1>User Details</h1>
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="use.id" readonly></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td><input [(ngModel)]="use.username" readonly></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input [(ngModel)]="use.password" readonly></td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td><input [(ngModel)]="use.firstname" readonly></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input [(ngModel)]="use.lastname" readonly></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input [(ngModel)]="use.phone" readonly></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input [(ngModel)]="use.email" readonly></td>
+        </tr>
+        <tr>
+            <td>Reviewer</td>
+            <td><input [(ngModel)]="use.isReviewer" readonly></td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td><input [(ngModel)]="use.isAdmin" readonly></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Delete</button>
+</div>

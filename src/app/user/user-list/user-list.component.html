@@ -1,6 +1,6 @@
 <div id="component">
     <app-menu></app-menu>
-    <a routerLink="use/create">Create New User</a>
+    <a routerLink="/use/create">Create New User</a>
     <input [(ngModel)]="substr" placeholder="search">
     <table class="table table-sm table-striped">
         <thead>
@@ -26,8 +26,8 @@
                 <td>{{u.lastname}}</td>
                 <td>{{u.phone}}</td>
                 <td>{{u.email}}</td>
-                <td>{{u.isReviewer}}</td>
-                <td>{{u.isAdmin}}</td>
+                <td>{{u.isReviewer | bool: locale}}</td>
+                <td>{{u.isAdmin | bool: locale}}</td>
                 <td>
                     <a routerLink="/use/detail/{{u.id}}">Details</a> |
                     <a routerLink="/use/edit/{{u.id}}">Edit</a>

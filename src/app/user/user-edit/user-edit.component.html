@@ -1,0 +1,44 @@
+<h1>User Edits</h1>
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="uses.id" readonly></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td><input [(ngModel)]="uses.username" type="text"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input [(ngModel)]="uses.password" type="text"></td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td><input [(ngModel)]="uses.firstname" type="text"></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input [(ngModel)]="uses.lastname" type="text"></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input [(ngModel)]="uses.phone" type="text"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input [(ngModel)]="uses.email" type="text"></td>
+        </tr>
+        <tr>
+            <td>Reviewer?</td>
+            <td><input [(ngModel)]="uses.isReviewer" type="text"></td>
+        </tr>
+        <tr>
+            <td>Admin?</td>
+            <td><input [(ngModel)]="uses.isAdmin" type="text"></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>
