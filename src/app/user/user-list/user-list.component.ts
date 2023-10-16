@@ -10,8 +10,9 @@ import { UserService } from '../user.service';
 export class UserListComponent {
   pageTitle = "User List";
   uses!: User[];
+  locale: string = 'en';
   substr: string = "";
-  sortCol: string = "firstname";
+  sortCol: string = "username";
   sortAsc: boolean = true;
   sortUser(col: string): void {
     if(col === this.sortCol){

@@ -7,18 +7,18 @@
             <tr>
                 <th><button (click)="sortUser('id')" class="btn btn-link">Id</button></th>
                 <th><button (click)="sortUser('username')" class="btn btn-link">Username</button></th>
-                <th>Password</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Reviewer?</th>
-                <th>Admin?</th>
+                <th><button (click)="sortUser('password')" class="btn btn-link">Password</button></th>
+                <th><button (click)="sortUser('firstname')" class="btn btn-link">Firstname</button></th>
+                <th><button (click)="sortUser('lastname')" class="btn btn-link">Lastname</button></th>
+                <th><button (click)="sortUser('phone')" class="btn btn-link">Phone</button></th>
+                <th><button (click)="sortUser('email')" class="btn btn-link">Email</button></th>
+                <th><button (click)="sortUser('reviewer')" class="btn btn-link">Reviewer?</button></th>
+                <th><button (click)="sortUser('admin')" class="btn btn-link">Admin?</button></th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let u of uses">
+            <tr *ngFor="let u of uses | searchUser: substr | sort:sortCol:sortAsc">
                 <td>{{u.id}}</td>
                 <td>{{u.username}}</td>
                 <td>{{u.password}}</td>
@@ -28,6 +28,10 @@
                 <td>{{u.email}}</td>
                 <td>{{u.isReviewer}}</td>
                 <td>{{u.isAdmin}}</td>
+                <td>
+                    <a routerLink="/use/detail/{{u.id}}">Details</a> |
+                    <a routerLink="/use/edit/{{u.id}}">Edit</a>
+                </td>
 
             </tr>
         </tbody>

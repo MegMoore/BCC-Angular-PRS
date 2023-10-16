@@ -1,24 +1,31 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { User } from '../user/user.class';
 
+
 @Pipe({
   name: 'sort'
 })
 export class SortPipe implements PipeTransform {
 
-  transform(uses: User[], substr: string = ""): User[] {
-    return uses;
-    let selectedUsers: User[] = [];
-    for(let u of uses) {
-      if(
-        u.firstname.toLowerCase().includes(substr.toLowerCase())
-        || (u.firstname != null && u.firstname.toLowerCase().includes(substr.toLowerCase()))
-        ) {
-          selectedUsers.push(u);
-        }
+  transform(arr: any[], column: string = "id", asc: boolean = true): any[] {
+    const compareFn = (a: any, b: any): number => {
+      let  x = typeof a[column] === "number" ? a[column] : a[column].toString().toLowerCase();
+      let  y = typeof b[column] === "number" ? b[column] : b[column].toString().toLowerCase();
+      if(asc) {
+        return (x>y) ? 1 : -1;
+      } else {
+        return (x>y) ? -1 : 1;
+        
       }
-      return selectedUsers;
     }
+    return arr.sort(compareFn);
+  }
+
 }
+
+
+
+
+ 
 
 
