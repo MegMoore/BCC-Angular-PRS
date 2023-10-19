@@ -19,7 +19,7 @@ export class UserListComponent {
       this.sortAsc = !this.sortAsc;
       return;
     }
-    this.sortCol
+    this.sortCol = col;
     this.sortAsc = true;
   }
 

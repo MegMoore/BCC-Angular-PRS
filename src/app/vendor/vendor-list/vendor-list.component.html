@@ -1,0 +1,40 @@
+<div id="component">
+    <app-menu></app-menu>
+    <a routerLink="/vend/create">Create New Vendor</a>
+    <input [(ngModel)]="substr" placeholder="search">
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th><button (click)="sortVendor('id')" class="btn btn-link">Id</button></th>
+                <th><button (click)="sortVendor('code')" class="btn btn-link">Code</button></th>
+                <th><button (click)="sortVendor('name')" class="btn btn-link">Name</button></th>
+                <th><button (click)="sortVendor('address')" class="btn btn-link">Address</button></th>
+                <th><button (click)="sortVendor('city')" class="btn btn-link">City</button></th>
+                <th><button (click)="sortVendor('state')" class="btn btn-link">State</button></th>
+                <th><button (click)="sortVendor('zip')" class="btn btn-link">Zip</button></th>
+                <th><button (click)="sortVendor('phone')" class="btn btn-link">Phone</button></th>
+                <th><button (click)="sortVendor('email')" class="btn btn-link">Email</button></th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let v of vends | searchVendor: substr | sort:sortCol:sortAsc">
+                <td>{{v.id}}</td>
+                <td>{{v.code}}</td>
+                <td>{{v.name}}</td>
+                <td>{{v.address}}</td>
+                <td>{{v.city}}</td>
+                <td>{{v.state}}</td>
+                <td>{{v.zip}}</td>
+                <td>{{v.phone}}</td>
+                <td>{{v.email}}</td>
+                <td>
+                    <a routerLink="/vend/detail/{{v.id}}">Details</a> |
+                    <a routerLink="/vend/edit/{{v.id}}">Edit</a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+

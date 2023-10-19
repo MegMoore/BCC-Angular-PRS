@@ -6,7 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class BoolPipe implements PipeTransform {
 
   transform(bool: boolean, locale: string = "en"): string {
-    return bool ? "Yes" : "No";
+    if(locale === 'fr')
+      return bool ? "Yes" : "No";
+    return bool ? "Oui" : "Non";
   }
 
 }
