@@ -12,6 +12,14 @@ import { VendorListComponent } from './vendor/vendor-list/vendor-list.component'
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full"},
@@ -28,8 +36,18 @@ const routes: Routes = [
   {path: "vend/create", component: VendorCreateComponent},
   {path: "vend/detail/:id", component: VendorDetailComponent},
   {path: "vend/edit/:id", component: VendorEditComponent},
-
   
+  {path: "prod/edit/:id", component: ProductEditComponent},
+  {path: "prod/detail/:id", component: ProductDetailComponent},
+  {path: "prod/create", component: ProductCreateComponent},
+  {path: "prod/list", component: ProductListComponent},
+  
+  {path: "req/list", component: RequestListComponent},
+  {path: "req/create", component: RequestCreateComponent},
+  {path: "req/detail/:id", component: RequestDetailComponent},
+  {path: "req/edit/:id", component: RequestEditComponent},
+
+
   {path: "**", component: E404Component}
 ];
 

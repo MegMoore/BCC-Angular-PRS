@@ -22,6 +22,16 @@ import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.comp
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { SearchVendorPipe } from './vendor/search-vendor.pipe';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { SearchProductPipe } from './product/search-product.pipe';
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { SearchRequestPipe } from './request/search-request.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +52,17 @@ import { SearchVendorPipe } from './vendor/search-vendor.pipe';
     VendorCreateComponent,
     VendorDetailComponent,
     VendorEditComponent,
-    SearchVendorPipe
+    SearchVendorPipe,
+    ProductListComponent,
+    ProductCreateComponent,
+    ProductDetailComponent,
+    ProductEditComponent,
+    SearchProductPipe,
+    RequestListComponent,
+    RequestEditComponent,
+    RequestDetailComponent,
+    RequestCreateComponent,
+    SearchRequestPipe
   ],
   imports: [
     BrowserModule,

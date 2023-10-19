@@ -1,0 +1,36 @@
+<div id="component">
+    <app-menu></app-menu>
+    <a routerLink="/prod/create">Create New Product</a>
+    <input [(ngModel)]="substr" placeholder="search">
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th><button (click)="sortProduct('id')" class="btn btn-link">Id</button></th>
+                <th><button (click)="sortProduct('partNbr')" class="btn btn-link">Part Number</button></th>
+                <th><button (click)="sortProduct('name')" class="btn btn-link">Name</button></th>
+                <th><button (click)="sortProduct('price')" class="btn btn-link">Price</button></th>
+                <th><button (click)="sortProduct('unit')" class="btn btn-link">Unit</button></th>
+                <th><button (click)="sortProduct('photoPath')" class="btn btn-link">PhotoPath</button></th>
+                <th><button (click)="sortProduct('vendor.name')" class="btn btn-link">Vendor Name</button></th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of prods | searchProduct: substr | sort:sortCol:sortAsc">
+                <td>{{p.id}}</td>
+                <td>{{p.partNbr}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.unit}}</td>
+                <td>{{p.photoPath}}</td>
+                <td>{{p.vendor.name}}</td>
+                <td>
+                    <a routerLink="/prod/detail/{{p.id}}">Details</a> |
+                    <a routerLink="/prod/edit/{{p.id}}">Edit</a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+

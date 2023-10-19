@@ -1,0 +1,37 @@
+<h1>Product Details</h1>
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="prod.id" readonly></td>
+        </tr>
+        <tr>
+            <td>Part Number</td>
+            <td><input [(ngModel)]="prod.partNbr" readonly></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]="prod.name" readonly></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input [(ngModel)]="prod.price" readonly></td>
+        </tr>
+        <tr>
+            <td>Unit</td>
+            <td><input [(ngModel)]="prod.unit" readonly></td>
+        </tr>
+        <tr>
+            <td>Photo Path</td>
+            <td><input [(ngModel)]="prod.photoPath" readonly></td>
+        </tr>
+        <tr>
+            <td>Vendor Id</td>
+            <td><input [(ngModel)]="prod.vendorId" readonly></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Delete</button>
+</div>
+
