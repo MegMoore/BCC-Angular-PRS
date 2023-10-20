@@ -1,1 +1,40 @@
-<p>request-create works!</p>
+<h1>Create New Request</h1>
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="req.id" readonly></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input [(ngModel)]="req.description" type="text"></td>
+        </tr>
+        <tr>
+            <td>Justification</td>
+            <td><input [(ngModel)]="req.justification" type="text"></td>
+        </tr>
+        <tr>
+            <td>Delivery Mode</td>
+            <td><input [(ngModel)]="req.deliveryMode" type="text"></td>
+        </tr>       
+        <tr>
+            <td>Status</td>
+            <td><input [(ngModel)]="req.status" readonly placeholder="NEW"></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td><input [(ngModel)]="req.total" readonly placeholder="0.00"></td>
+        </tr>
+        <tr>
+            <td>User</td>
+            <td>
+                <select [(ngModel)]="req.userId">
+                    <option *ngFor="let x of use" value="{{x.id}}">{{x.username}}</option>
+                </select>
+        </tr>
+       
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>

@@ -33,6 +33,11 @@ export class RequestService {
     return this.http.put(`${this.url}/${req.id}`, req) as Observable<any>;
   }
 
+  //change status to review
+  review(req: Request): Observable<any>{
+    return this.http.put(`${this.url}/review/${req.id}`, req) as Observable<any>
+  }
+
   //delete user
   remove(id: number): Observable<any>{
     return this.http.delete(`${this.url}/${id}`) as Observable<any>;

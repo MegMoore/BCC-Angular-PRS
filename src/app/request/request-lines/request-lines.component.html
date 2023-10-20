@@ -1,0 +1,59 @@
+<div id="component">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Justificaiton</th>
+                <th>Reason for Rejection</th>
+                <th>Delivery Mode</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>User</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{req.id}}</td>
+                <td>{{req.description}}</td>
+                <td>{{req.justification}}</td>
+                <td>{{req.rejectionReason}}</td>
+                <td>{{req.deliveryMode}}</td>
+                <td>{{req.status}}</td>
+                <td>{{req.total}}</td>
+                <td>{{req.user?.username}}</td>
+                <td>
+                    <button (click)="review" class="btn btn-primary btn-sm">Review</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a routerLink="/reql/create/{{req.id}}" *ngIf="req">Create New</a>
+    <table class="table table-sm table-striped" *ngIf="req">
+        <thead>
+            <th>Id</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>SubTotal</th>
+            <th>Actions</th>
+        </thead>
+        <tbody *ngIf="req && req.requestLines">
+            <tr *ngFor="let x of req.requestLines">
+                <td>{{x.id}}</td>
+                <td>{{x.product?.name}}</td>
+                <td>{{x.quantity}}</td>
+                <td>{{x.product?.price}}</td>
+                <td>{{x.quantity * x.product!.price | currency}}</td>
+
+                <td><a routerLink="/ordl/edit/{{x.id}}">Edit</a>
+
+                    <button (click)="remove(x.id)">Delete</button>
+                    <button *ngIf="showverify && x.id === saveid" (click)="verifyremove(x.id)">Verify</button>
+
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
