@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Request } from '../request.class';
 
 @Component({
   selector: 'app-request-review-list',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./request-review-list.component.css']
 })
 export class RequestReviewListComponent {
-
+reqs!: Request[];
 }
