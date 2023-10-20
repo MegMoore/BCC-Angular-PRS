@@ -23,7 +23,7 @@
                 <td>{{req.total}}</td>
                 <td>{{req.user?.username}}</td>
                 <td>
-                    <button (click)="review" class="btn btn-primary btn-sm">Review</button>
+                   
                 </td>
             </tr>
         </tbody>
@@ -46,7 +46,7 @@
                 <td>{{x.product?.price}}</td>
                 <td>{{x.quantity * x.product!.price | currency}}</td>
 
-                <td><a routerLink="/ordl/edit/{{x.id}}">Edit</a>
+                <td><a routerLink="/reql/edit/{{x.id}}">Edit</a>
 
                     <button (click)="remove(x.id)">Delete</button>
                     <button *ngIf="showverify && x.id === saveid" (click)="verifyremove(x.id)">Verify</button>

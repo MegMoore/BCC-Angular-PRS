@@ -1,8 +1,10 @@
 <div id="component">
     <app-menu></app-menu>
-    <a routerLink="/req/create">Create New Request</a>
+    <a routerLink="/req/create" class="btn btn-primary btn-sm">Create New Request</a>
     <input [(ngModel)]="substr" placeholder="search">
     <table class="table table-sm table-striped">
+        
+        
         <thead>
             <tr>
                 <th><button (click)="sortRequest('id')" class="btn btn-link">Id</button></th>
@@ -14,6 +16,7 @@
                 <th><button (click)="sortRequest('total')" class="btn btn-link">Total</button></th>
                 <th><button (click)="sortRequest('userId')" class="btn btn-link">User</button></th>
                 <th>Actions</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -29,7 +32,8 @@
                 <td>
                     <a routerLink="/req/detail/{{r.id}}">Details</a> |
                     <a routerLink="/req/edit/{{r.id}}">Edit</a> |
-                    <a routerLink="/req/lines/{{r.id}}">Lines</a>
+                    <a routerLink="/req/lines/{{r.id}}">Lines</a> |
+                    <a routerLink="/req/rev/list">Review</a>
                 </td>
 
             </tr>

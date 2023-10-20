@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
+import { SystemService } from 'src/app/core/system.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RequestlineService } from 'src/app/requestline/requestline.service';
 
 @Component({
   selector: 'app-request-list',
@@ -24,9 +27,16 @@ export class RequestListComponent {
   }
 
   constructor(
-    private reqsvc: RequestService
+    private reqsvc: RequestService,
+    private syssvc: SystemService, 
+    private route: ActivatedRoute,
+    private router: Router,
+    private reqlsvc: RequestlineService
   ){}
 
+  
+
+ 
   ngOnInit(): void {
     this.reqsvc.list().subscribe({
       next: (res) => {

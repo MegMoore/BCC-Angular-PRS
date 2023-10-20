@@ -18,10 +18,15 @@ export class RequestService {
   list(): Observable<Request[]>{
     return this.http.get(`${this.url}`) as Observable<Request[]>;
   }
-
+  
   //get by primary key
   get(id: number): Observable<Request>{
     return this.http.get(`${this.url}/${id}`) as Observable<Request>;
+  }
+  
+  //get all with status as review
+  review(req: Request): Observable<any>{
+    return this.http.put(`${this.url}/review`, req) as Observable<any>
   }
 
   //create user
@@ -33,10 +38,6 @@ export class RequestService {
     return this.http.put(`${this.url}/${req.id}`, req) as Observable<any>;
   }
 
-  //change status to review
-  review(req: Request): Observable<any>{
-    return this.http.put(`${this.url}/review/${req.id}`, req) as Observable<any>
-  }
 
   //delete user
   remove(id: number): Observable<any>{
