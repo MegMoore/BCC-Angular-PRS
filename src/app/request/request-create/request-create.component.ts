@@ -13,12 +13,12 @@ import { SystemService } from 'src/app/core/system.service';
 })
 export class RequestCreateComponent {
   req: Request = new Request();
-  use!: User[];
+  
 
   constructor(
     private reqsvc: RequestService,
     private router: Router,
-    private usesvc: UserService,
+   
     private syssvc: SystemService
   ){}
   
@@ -34,15 +34,11 @@ export class RequestCreateComponent {
     })
   }
   ngOnInit(): void {
-    this.usesvc.list().subscribe({
-      next: (res) => {
-        console.log(res);
-        this.use = res;
-      },
-      error: (err) => {
-        console.error(err)
-      }
-    })
+    if(this.syssvc.loggedInUser !== null){
+      this.req.userId = this.syssvc.loggedInUser?.id
+    } else {
+      this.router.navigateByUrl("/use/login")
+    }
   }
   
   }

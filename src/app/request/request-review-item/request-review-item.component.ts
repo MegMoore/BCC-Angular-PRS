@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import { Request } from '../request.class';
-import { RequestLine} from 'src/app/requestline/requestline.class';
-import { SystemService } from 'src/app/core/system.service';
-import { RequestService } from '../request.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RequestlineService } from 'src/app/requestline/requestline.service';
+import { SystemService } from 'src/app/core/system.service';
 import { UserService } from 'src/app/user/user.service';
+import { RequestService } from '../request.service';
+import { RequestlineService } from 'src/app/requestline/requestline.service';
+
+import { Request } from '../request.class';
+
 
 @Component({
-  selector: 'app-request-lines',
-  templateUrl: './request-lines.component.html',
-  styleUrls: ['./request-lines.component.css']
+  selector: 'app-request-review-item',
+  templateUrl: './request-review-item.component.html',
+  styleUrls: ['./request-review-item.component.css']
 })
-export class RequestLinesComponent {
+export class RequestReviewItemComponent {
   req!: Request;
   
 
@@ -21,21 +22,20 @@ export class RequestLinesComponent {
     private reqsvc: RequestService,
     private route: ActivatedRoute,
     private reqlsvc: RequestlineService,
-    private usesvc: UserService
+    private router: Router
+    
+    
   ){}
+  
+ 
+ 
 
-  saveid: number = 0;
-  remove(id: number): void {
-    this.showverify = !this.showverify;
-    this.saveid = id;
-  }
-
-  showverify: boolean = false;
-  verifyremove(id: number): void {
-    this.reqlsvc.remove(id).subscribe({
+ 
+  save(): void {
+    this.reqsvc.approved(this.req.id, this.req).subscribe({
       next: (res) => {
-        console.log("deleted");
-        this.refresh();
+        console.log(res);
+        this.router.navigateByUrl("req/rev/list");
       },
       error: (err) => {
         console.error(err);
@@ -43,10 +43,11 @@ export class RequestLinesComponent {
       
     })
   }
-  save(): void {
-    this.reqsvc.review(this.req.id, this.req).subscribe({
+  rejected(): void {
+    this.reqsvc.rejected(this.req.id, this.req).subscribe({
       next: (res) => {
         console.log(res);
+        this.router.navigateByUrl("req/rev/list");
       },
       error: (err) => {
         console.error(err);

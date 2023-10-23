@@ -19,19 +19,13 @@
         </tr>       
         <tr>
             <td>Status</td>
-            <td><input [(ngModel)]="req.status" readonly placeholder="NEW"></td>
+            <td><input [(ngModel)]="req.status" readonly placeholder="REVIEW"></td>
         </tr>
         <tr>
             <td>Total</td>
             <td><input [(ngModel)]="req.total" readonly placeholder="0.00"></td>
         </tr>
-        <tr>
-            <td>User</td>
-            <td>
-                <select [(ngModel)]="req.userId">
-                    <option *ngFor="let x of use" value="{{x.id}}">{{x.username}}</option>
-                </select>
-        </tr>
+       
        
     </tbody>
 </table>

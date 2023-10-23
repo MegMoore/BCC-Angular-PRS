@@ -7,7 +7,7 @@ export class Request {
     justification: string = "";
     rejectionReason: string = "";
     deliveryMode: string = "Pickup";
-    status: string = "NEW";
+    status: string = "REVIEW";
     total: number = 0;
 
     userId: number = 0;

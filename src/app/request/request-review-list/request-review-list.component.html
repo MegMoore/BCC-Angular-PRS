@@ -1,1 +1,37 @@
-<p>request-review-list works!</p>
+<div id="component">
+    <app-menu></app-menu>
+    
+    <input [(ngModel)]="substr" placeholder="search">
+    <table class="table table-sm table-striped">
+        
+        
+        <thead>
+            <tr>
+                <th><button (click)="sortRequest('id')" class="btn btn-link">Id</button></th>
+                <th><button (click)="sortRequest('description')" class="btn btn-link">Description</button></th>
+                <th><button (click)="sortRequest('justification')" class="btn btn-link">Justification</button></th>
+                
+                <th><button (click)="sortRequest('deliveryMode')" class="btn btn-link">Delivery Mode</button></th>
+                <th><button (click)="sortRequest('status')" class="btn btn-link">Status</button></th>
+                <th><button (click)="sortRequest('total')" class="btn btn-link">Total</button></th>
+                <th><button (click)="sortRequest('userId')" class="btn btn-link">User</button></th>
+                <th>Actions</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of reqs | searchRequest: substr ">
+                <td>{{r.id}}</td>
+                <td>{{r.description}}</td>
+                <td>{{r.justification}}</td>
+                <td>{{r.deliveryMode}}</td>
+                <td>{{r.status}}</td>
+                <td>{{r.total}}</td>
+                <td>{{r.user?.username}}</td>
+                <td>
+                    <a routerLink="/req/rev/item/{{r.id}}">Review</a>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>

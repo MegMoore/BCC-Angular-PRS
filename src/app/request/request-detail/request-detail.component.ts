@@ -17,9 +17,7 @@ export class RequestDetailComponent {
   constructor(
     private reqsvc: RequestService,
     private route: ActivatedRoute,
-    private router: Router,
-    private usesvc: UserService,
-    private syssvc: SystemService
+    private router: Router
   ){}
 
     save(): void {

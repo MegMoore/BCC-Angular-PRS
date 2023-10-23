@@ -25,8 +25,22 @@ export class RequestService {
   }
   
   //get all with status as review
-  review(req: Request): Observable<any>{
-    return this.http.put(`${this.url}/review`, req) as Observable<any>
+  requests(id: number): Observable<any>{
+    return this.http.get(`${this.url}/review/${id}`) as Observable<any>
+  }
+
+  //set status based on total
+  review(id: number, req: Request): Observable<any>{
+    return this.http.put(`${this.url}/review/${id}`, req) as Observable<any>;
+  }
+
+  //set as Approved
+  approved(id: number, req: Request): Observable<any>{
+    return this.http.put(`${this.url}/approved/${id}`, req) as Observable<any>;
+  }
+  //set as Rejected
+  rejected(id: number, req: Request): Observable<any>{
+    return this.http.put(`${this.url}/rejected/${id}`, req) as Observable<any>;
   }
 
   //create user

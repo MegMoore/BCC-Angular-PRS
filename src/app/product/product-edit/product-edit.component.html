@@ -1,4 +1,5 @@
 <h1>Edit Product</h1>
+<app-menu></app-menu>
 <table>
     <tbody>
         <tr>
@@ -26,10 +27,13 @@
             <td><input [(ngModel)]="prod.photoPath" type="text"></td>
         </tr>
         <tr>
-            <td>Vendor Id</td>
-            <td><input [(ngModel)]="prod.vendorId" type="text"></td>
+        <td>Vendor</td>
+            <td>
+                <select [(ngModel)]="prod.vendorId">
+                    <option *ngFor="let x of vens" value="{{x.id}}">{{x.name}}</option>
+            </select>
+            </td>
         </tr>
-      
     </tbody>
 </table>
 <div>

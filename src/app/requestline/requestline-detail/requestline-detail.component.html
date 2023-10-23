@@ -1,1 +1,25 @@
-<p>requestline-detail works!</p>
+<h1>Detail RequestLine</h1>
+<app-menu></app-menu>
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="reql.id" readonly></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td><input [(ngModel)]="reql.quantity" readonly></td>
+        </tr>
+        <tr>
+            <td>Request Id</td>
+            <td><input [(ngModel)]="reql.requestId" readonly ></td>
+        </tr>
+        <tr>
+            <td>Product Id</td>
+            <td><input [(ngModel)]="reql.productId" readonly ></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+

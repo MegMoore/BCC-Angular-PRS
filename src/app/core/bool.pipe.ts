@@ -7,8 +7,8 @@ export class BoolPipe implements PipeTransform {
 
   transform(bool: boolean, locale: string = "en"): string {
     if(locale === 'fr')
-      return bool ? "Yes" : "No";
-    return bool ? "Oui" : "Non";
+     return bool ? "Oui" : "Non";
+    return bool ? "Yes" : "No";
   }
 
 }

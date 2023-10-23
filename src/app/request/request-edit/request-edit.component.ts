@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/app/user/user.class';
+import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-request-edit',
@@ -10,11 +12,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RequestEditComponent {
   req!: Request;
+  use!: User[];
 
   constructor(
     private reqsvc: RequestService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private usesvc: UserService
   ){}
    
   save(): void {
@@ -38,6 +42,15 @@ export class RequestEditComponent {
       },
       error: (err) => {
         console.error(err);
+      }
+    })
+    this.usesvc.list().subscribe({
+      next: (res) => {
+        console.debug(res);
+        this.use = res;
+      },
+      error: (err) => {
+        console.error();
       }
     })
   }
