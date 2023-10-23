@@ -1,8 +1,8 @@
 <div id="component">
     <app-menu></app-menu>
-    <a routerLink="/prod/create">Create New Product</a>
+    <a routerLink="/prod/create" class="btn btn-secondary btn-sm" id="create">Create New Product</a>
     <input [(ngModel)]="substr" placeholder="search">
-    <table class="table table-sm table-striped">
+    <table class="table table-sm table-striped table-secondary">
         <thead>
             <tr>
                 <th><button (click)="sortProduct('id')" class="btn btn-link">Id</button></th>
@@ -12,7 +12,7 @@
                 <th><button (click)="sortProduct('unit')" class="btn btn-link">Unit</button></th>
                 <th><button (click)="sortProduct('photoPath')" class="btn btn-link">PhotoPath</button></th>
                 <th><button (click)="sortProduct('vendor.name')" class="btn btn-link">Vendor Name</button></th>
-                <th>Actions</th>
+                <th id="Actions">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +25,8 @@
                 <td>{{p.photoPath}}</td>
                 <td>{{p.vendor.name}}</td>
                 <td>
-                    <a routerLink="/prod/detail/{{p.id}}">Details</a> |
-                    <a routerLink="/prod/edit/{{p.id}}">Edit</a>
+                    <a routerLink="/prod/detail/{{p.id}}" class="btn btn-secondary btn-sm">Details</a> |
+                    <a routerLink="/prod/edit/{{p.id}}" class="btn btn-secondary btn-sm">Edit</a>
                 </td>
 
             </tr>

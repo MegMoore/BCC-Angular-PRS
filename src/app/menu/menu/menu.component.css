@@ -1,6 +1,10 @@
 nav {
     background-color: #262626;
     color: #F2BF5E;
+
+}
+body {
+    background-color: #0D0D0D;
 }
 ul {
     margin: 0;
@@ -14,4 +18,7 @@ a {
     margin: 0;
     color: #D9D0C7;
     text-decoration: none;
+}
+#component {
+ background-color: #0D0D0D;
 }

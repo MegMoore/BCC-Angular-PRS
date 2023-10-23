@@ -1,0 +1,17 @@
+button {
+    color:  #595959;
+    font-weight: 600;
+    text-decoration : none;
+}
+#component {
+    background-color: #D9D0C7;
+   }
+a {
+    color: #F2BF5E;
+    background-color: #595959;
+    border-color: #595959;
+}
+#Actions {
+    color: #595959;
+    font-weight: 600;
+}
