@@ -39,6 +39,8 @@ import { RequestlineEditComponent } from './requestline/requestline-edit/request
 import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
 import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
 import { AppInitService } from './app-init.service';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 
 const startupServiceFactory = (appinit: AppInitService) => {
@@ -90,7 +92,7 @@ const startupServiceFactory = (appinit: AppInitService) => {
   ],
   providers: [
     AppInitService, {
-      provide: APP_INITIALIZER,
+      provide: LocationStrategy, useClass: HashLocationStrategy,
       useFactory: startupServiceFactory,
       deps: [AppInitService],
       multi: true
