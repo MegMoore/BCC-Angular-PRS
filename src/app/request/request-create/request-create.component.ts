@@ -34,11 +34,10 @@ export class RequestCreateComponent {
     })
   }
   ngOnInit(): void {
+    this.syssvc.chkLogin();
     if(this.syssvc.loggedInUser !== null){
       this.req.userId = this.syssvc.loggedInUser?.id
-    } else {
-      this.router.navigateByUrl("/use/login")
-    }
+    } 
   }
   
   }

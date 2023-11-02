@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Vendor } from './vendor.class';
+import { SystemService } from '../core/system.service';
 
 
 @Injectable({
@@ -9,10 +10,11 @@ import { Vendor } from './vendor.class';
 })
 export class VendorService {
 
-  url: string = "http://localhost:5566/api/vendors";
+  get url() { return `${this.syssvc.config.baseurl}/api/vendors`;}
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private syssvc: SystemService
   ) { }
 
   //get all vendors

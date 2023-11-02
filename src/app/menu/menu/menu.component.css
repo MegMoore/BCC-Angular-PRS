@@ -1,5 +1,5 @@
 nav {
-    background-color: #262626;
+    background-color: #595959;
     color: #F2BF5E;
 
 }
@@ -16,9 +16,9 @@ li {
 }
 a {
     margin: 0;
-    color: #D9D0C7;
+    color: #F2BF5E;
     text-decoration: none;
 }
 #component {
- background-color: #0D0D0D;
+ background-color: #595959;
 }

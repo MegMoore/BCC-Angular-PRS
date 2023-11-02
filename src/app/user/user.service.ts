@@ -2,16 +2,19 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from './user.class';
+import { SystemService } from '../core/system.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  url: string = "http://localhost:5566/api/users";
+  get url() { return `${this.syssvc.config.baseurl}/api/users`;}
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private syssvc: SystemService
+
   ) { }
 
   //get by username and password

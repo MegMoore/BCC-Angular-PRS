@@ -1,0 +1,16 @@
+button {
+    background-color: #595959;
+    color:  #F2BF5E;
+    font-weight: 600;
+    text-decoration : none;
+    border: #595959;
+}
+#component {
+    background-color: #D9D0C7;
+    font-weight: 600;
+   }
+a {
+    color: #F2BF5E;
+    background-color: #595959;
+    border-color: #595959;
+}
