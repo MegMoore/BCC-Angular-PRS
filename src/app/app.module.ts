@@ -92,7 +92,7 @@ const startupServiceFactory = (appinit: AppInitService) => {
   ],
   providers: [
     AppInitService, {
-      provide: LocationStrategy, useClass: HashLocationStrategy,
+      provide:{LocationStrategy, useClass: HashLocationStrategy},
       useFactory: startupServiceFactory,
       deps: [AppInitService],
       multi: true
