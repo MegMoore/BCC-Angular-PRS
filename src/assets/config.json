@@ -1,3 +1,4 @@
 {
-    "baseurl": "http://meganmoo.w27.wh-2.com/prscdb"
+    "baseurl": "http://meganmoo.w27.wh-2.com/prscdb",
+    "xbaseurl": "http://localhost:5566"
 }
